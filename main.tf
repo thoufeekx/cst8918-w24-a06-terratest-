@@ -127,6 +127,3 @@ resource "azurerm_linux_virtual_machine" "webserver" {
 
   depends_on = [azurerm_network_interface.webserver]
 }
-// Confirm NIC exists
-nicName := terraform.Output(t, terraformOptions, "nic_name") // Assuming you have an output for NIC name
-assert.True(t, azure.NetworkInterfaceExists(t, nicName, resourceGroupName, subscriptionID))
